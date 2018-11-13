@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 var app = angular.module("myApp", ["ngRoute", "oc.lazyLoad"]);
 
 app.config(['$routeProvider','$controllerProvider','$locationProvider', function($routeProvider,$controllerProvider, $locationProvider) {
@@ -246,4 +247,29 @@ app.controller("mainController", function ($scope, $location) {
         $scope.getPathURL = $location.$$url;
     }
 
+=======
+var app = angular.module("myApp", ["ngRoute"]);
+
+app.config(function($routeProvider) {
+    $routeProvider
+    .when("/", {
+        templateUrl : "main.htm"
+    })
+    .when("/london", {
+        templateUrl : "london.htm",
+        controller : "londonCtrl"
+    })
+    .when("/paris", {
+        templateUrl : "paris.htm",
+        controller : "parisCtrl"
+    });
+});
+
+app.controller("londonCtrl", function ($scope) {
+    $scope.msg = "I love London";
+});
+
+app.controller("parisCtrl", function ($scope) {
+    $scope.msg = "I love Paris";
+>>>>>>> 79b6a267eef1f77e804d61d740937529adf8d548
 });
