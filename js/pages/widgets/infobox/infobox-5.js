@@ -1,52 +1,37 @@
-﻿$(function () {
-    initCounters();
-    initCharts();
-});
+﻿app.register.controller("infobox5Ctrl", function($scope) {
 
-//Widgets count plugin
-function initCounters() {
     $('.count-to').countTo();
-}
 
-//Charts
-function initCharts() {
     //Chart Bar
-    $.each($('.chart.chart-bar'), function (i, key) {
-        var chartColor = $.AdminBSB.options.colors[$(key).data('chartcolor')];
-        $(key).sparkline(undefined, {
-            type: 'bar',
-            barColor: chartColor,
-            negBarColor: chartColor,
-            barWidth: '8px',
-            height: '34px'
-        });
+    $('.chart.chart-bar').sparkline(undefined, {
+        type: 'bar',
+        barColor: '#fff',
+        negBarColor: '#fff',
+        barWidth: '4px',
+        height: '34px'
     });
 
     //Chart Pie
-    $.each($('.chart.chart-pie'), function (i, key) {
-        var chartColor = $.AdminBSB.options.colors[$(key).data('chartcolor')];
-        $(key).sparkline(undefined, {
-            type: 'pie',
-            height: '50px',
-            sliceColors: [hexToRgba(chartColor, '0.55'), hexToRgba(chartColor, '0.70'), hexToRgba(chartColor, '0.85'), hexToRgba(chartColor, '1')]
-        });
+    $('.chart.chart-pie').sparkline(undefined, {
+        type: 'pie',
+        height: '50px',
+        sliceColors: ['rgba(255,255,255,0.70)', 'rgba(255,255,255,0.85)', 'rgba(255,255,255,0.95)', 'rgba(255,255,255,1)']
     });
 
     //Chart Line
-    $.each($('.chart.chart-line'), function (i, key) {
-        var chartColor = $.AdminBSB.options.colors[$(key).data('chartcolor')];
-        $(key).sparkline(undefined, {
-            type: 'line',
-            width: '60px',
-            height: '45px',
-            lineColor: chartColor,
-            lineWidth: 1.3,
-            fillColor: 'rgba(0,0,0,0)',
-            spotColor: chartColor,
-            maxSpotColor: chartColor,
-            minSpotColor: chartColor,
-            spotRadius: 3,
-            highlightSpotColor: chartColor
-        });
+    $('.chart.chart-line').sparkline(undefined, {
+        type: 'line',
+        width: '60px',
+        height: '45px',
+        lineColor: '#fff',
+        lineWidth: 1.3,
+        fillColor: 'rgba(0,0,0,0)',
+        spotColor: 'rgba(255,255,255,0.40)',
+        maxSpotColor: 'rgba(255,255,255,0.40)',
+        minSpotColor: 'rgba(255,255,255,0.40)',
+        spotRadius: 3,
+        highlightSpotColor: '#fff'
     });
-}
+
+
+});

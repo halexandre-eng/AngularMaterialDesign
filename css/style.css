@@ -2413,7 +2413,8 @@ section.content {
   height: 275px; }
 
 .dashboard-donut-chart {
-  height: 265px; }
+  height: 265px;
+  text-align: center; }
 
 .dashboard-line-chart {
   height: 250px; }

@@ -1,18 +1,12 @@
-﻿$(function () {
-    initLoading();
-});
+﻿app.register.controller("cardsBasicCtrl", function($scope) {
 
-//Init Loading
-function initLoading() {
     $('[data-toggle="cardloading"]').on('click', function () {
         var effect = $(this).data('loadingEffect');
-        var color = $.AdminBSB.options.colors[$(this).data('loadingColor')];
-
         var $loading = $(this).parents('.card').waitMe({
             effect: effect,
             text: 'Loading...',
             bg: 'rgba(255,255,255,0.90)',
-            color: color
+            color: '#555'
         });
 
         setTimeout(function () {
@@ -20,4 +14,5 @@ function initLoading() {
             $loading.waitMe('hide');
         }, 3200);
     });
-}
+
+});

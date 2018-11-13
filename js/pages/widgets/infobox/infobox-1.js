@@ -1,15 +1,7 @@
-﻿$(function () {
-    initCounters();
-    initCharts();
-});
+﻿app.register.controller("infobox1Ctrl", function($scope) {
 
-//Widgets count plugin
-function initCounters() {
     $('.count-to').countTo();
-}
 
-//Charts
-function initCharts() {
     //Chart Bar
     $('.chart.chart-bar').sparkline(undefined, {
         type: 'bar',
@@ -40,4 +32,6 @@ function initCharts() {
         spotRadius: 3,
         highlightSpotColor: '#fff'
     });
-}
+
+
+});
